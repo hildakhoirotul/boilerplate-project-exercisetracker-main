@@ -4,9 +4,11 @@
 	"description": "A REST API project, part of Free Code Camp's curriculum",
 	"main": "index.js",
 	"scripts": {
-		"start": "node index.js",
-		"build": "echo 'No build step required'"
+		"dev": "npm run dev --workspace=frontend",
+		"build": "npm run build --workspace=frontend && mv frontend/dist ./dist",
+		"preview": "npm run preview --workspace=frontend"
 	},
+	"workspaces": ["frontend"],
 	"dependencies": {
 		"dotenv": "^8.2.0",
 		"express": "^4.16.4",
